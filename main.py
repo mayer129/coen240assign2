@@ -61,15 +61,10 @@ while True:
 
     if centroids == mean_compare or count > total_clusters: # In worst case, would eventually stop. Stirling Number of Second Kind
         for index, val in enumerate(mean_indexes):
-            print(f"C{index+1} = {set(mean_indexes[index])}, |{len(mean_indexes[index])}|, and centroid {centroids[index]}")
+            print(f"C{index+1} = {{{str([val+1 for val in mean_indexes[index]])[1:-1]}}}, |{len(mean_indexes[index])}|, and centroid {centroids[index]}")
         print("|C1| + |C2| + |C3| =", sum(len(x) for x in mean_indexes))
         print("Number of iterations:", count)
         break
     #print("centroids", count, " ", centroids) # For Testing
     #print("mean_compare", count, " ", mean_compare) # For Testing
     centroids = mean_compare
-
-
-
-
-
